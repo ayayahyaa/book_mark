@@ -1,4 +1,5 @@
-if (localStorage.getItem("sitesContainer") !== null) {
+var siteList= [];
+ if (localStorage.getItem("sitesContainer") !== null) {
   siteList = JSON.parse(localStorage.getItem("sitesContainer"));
   displayData();
 }
@@ -65,6 +66,9 @@ function addData() {
 function displayData () {
   var content = ""
   for ( var i =0 ; i < siteList.length ; i ++ ){
+    if(!siteList[i].url.startsWith('https://')|| !siteList[i].url.startsWith('http://')){
+      siteList[i].url = "https://" + siteList[i].url;
+    }     
     content+= 
     `
         <tr>
@@ -79,7 +83,6 @@ function displayData () {
   }
   document.getElementById("tableData").innerHTML = content;
 }
-
 function deleteData (index){
   siteList.splice(index , 1)
   localStorage.setItem("sitesContainer", JSON.stringify(siteList));
