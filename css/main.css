@@ -1,0 +1,55 @@
+body{
+    background-color: #F7ECDE;
+}
+/* Bg Title */
+h1{
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-size: 50px;
+}
+.bg{
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    font-weight: 900;
+    z-index: 1;
+    transition: all .5s;
+}
+.bg::after {
+    content: "";
+    position: absolute;
+    background-color:#FEC260;
+    height: 25px;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+}
+.bg:hover{
+    background-color: #FEC260;
+}
+/* Line Dashed */
+.line-1{
+    border-top: 1px  dashed #352E28;
+}
+.line-2{
+    border-bottom: 1px  dashed #352E28;
+}
+/* Title */
+.bookmark h2{
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    width: fit-content;
+    margin: auto;
+    background: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+button{
+    width: 150px;
+    height: 38px;
+    color: #fff;
+    border-radius: 8px;
+    background-color: #BB4120;
+}
+
